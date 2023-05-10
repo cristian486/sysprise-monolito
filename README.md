@@ -23,9 +23,9 @@ Partes do monólito que foram movidas para projetos/repositórios distintos:
 
 * [Produto](https://github.com/cristian486/sysprise-produto)
 
-* [Categoria](https://github.com/cristian486/sysprise-produto)
+* [Categoria](https://github.com/cristian486/sysprise-categoria)
 
-* [Unidade](https://github.com/cristian486/sysprise-produto)
+* [Unidade](https://github.com/cristian486/sysprise-unidade)
 
 ## Status do Projeto
 
