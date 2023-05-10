@@ -4,8 +4,6 @@
     <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
-<img src="./assets/images/telaPrincipal.jpeg" style="border-radius: 5%; display: block; max-width: 80vw; margin: 0 auto;"/>
-
 ## Índice
 
 * [Descrição do Projeto](#descrição-do-projeto)
@@ -19,9 +17,23 @@
 
 Aplicação em desenvolvimento que tem o objetivo de fornecer uma API com os recursos essenciais para um sistema ERP, construído com Spring Boot.
 
+Atualmente o projeto esta sendo movido para uma arquitetura distribuída, onde serão implementadas tecnologias como `gRPC`, `IC`, `KeyCloak` e `RabbitMq`.
+
+Partes do monólito que foram movidas para projetos/repositórios distintos:
+
+* [Produto](https://github.com/cristian486/sysprise-produto)
+
+* [Categoria](https://github.com/cristian486/sysprise-produto)
+
+* [Unidade](https://github.com/cristian486/sysprise-produto)
+
 ## Status do Projeto
 
 :construction: Projeto em construção :construction:
+
+## Funcionalidades
+
+Atualmente o sistema possibilita o CRUD de pessoa física e jurídica, produto, funcionário, usuário, cidade, tipo de pessoa, cidade, estado, endereço, contatos, unidade, venda e compra.
 
 ## Tecnologias utilizadas
 
@@ -34,3 +46,4 @@ Aplicação em desenvolvimento que tem o objetivo de fornecer uma API com os rec
 - ``MySql``
 - ``Spring Doc``
 - ``Lombok``
+- ``Docker``
