@@ -80,10 +80,6 @@ Um exemplo das aplicações e como elas se comunicam:
 ## Funcionalidades
 
 <div style='text-align: justify'> 
-Na versão de monólito (descontinuada), o sistema ERP que desenvolvi permite a realização de operações básicas, tais como cadastro, atualização, listagem e exclusão de informações relacionadas a pessoa física e jurídica, produtos, funcionários, usuários, cidades, tipos de pessoa, endereços, contatos, unidades, vendas e compras.
-
-</br>
-
 No módulo de cadastro, é possível registrar detalhes sobre clientes, tanto pessoas físicas como jurídicas, incluindo informações de identificação, dados de contato e endereços. O sistema também permite a gestão de produtos, com a possibilidade de cadastrar novos itens, atualizar suas informações e remover aqueles que não são mais necessários.
 
 Além disso, o ERP contempla funcionalidades relacionadas à gestão de funcionários, permitindo o registro de informações sobre colaboradores, como nome, cargo, departamento e dados de contato. O módulo de usuários permite criar e gerenciar contas de acesso ao sistema, controlando as permissões de cada usuário de acordo com suas responsabilidades.
