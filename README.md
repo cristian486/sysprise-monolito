@@ -15,70 +15,31 @@
 
 ## Descrição do Projeto
 
-Aplicação em desenvolvimento que tem o objetivo de fornecer uma API com os recursos essenciais para um sistema ERP, construído com Spring Boot.
+A aplicação em desenvolvimento é um sistema ERP construído com Spring Boot, que tem como objetivo fornecer uma API com os recursos essenciais para esse tipo de sistema.
 
-Atualmente o projeto esta sendo movido para uma arquitetura distribuída, onde serão implementadas tecnologias como `gRPC` :heavy_check_mark:, `IC`, `KeyCloak` e `RabbitMq` :heavy_check_mark:.
+Com base na estrutura do Spring Boot, a aplicação oferece uma arquitetura robusta e escalável para atender às necessidades de um ERP. Através da API desenvolvida, é possível acessar e gerenciar diversas funcionalidades fundamentais para a operação de um sistema ERP.
 
-Partes do monólito que foram movidas para projetos/repositórios distintos:
-
-* [Produto](https://github.com/cristian486/sysprise-produto)
-
-* [Categoria](https://github.com/cristian486/sysprise-categoria)
-
-* [Unidade](https://github.com/cristian486/sysprise-unidade)
-
-* [Pessoa](https://github.com/cristian486/sysprise-pessoa)
-
-* [Contato](https://github.com/cristian486/sysprise-contato)
-
-* [Endereço](https://github.com/cristian486/sysprise-endereco)
-
-* [Compra](https://github.com/cristian486/sysprise-compra)
-
-* [Venda](https://github.com/cristian486/sysprise-venda)
-
-* [Estoque](https://github.com/cristian486/sysprise-estoque)
-
-* [E-mail](https://github.com/cristian486/sysprise-email)
+**[VERSÃO ATUALIZADA DO PROJETO EM SERVIÇOS DISTINTOS](./servicos/README.md)**
 
 ## Status do Projeto
 
-:construction: Projeto em construção :construction:
+:heavy_exclamation_mark: DEPRECATED :heavy_exclamation_mark:
 
 ## Funcionalidades
 
-Na versão de monólito (descontinuada) o sistema possibilita as operações básicas de cadastro, atualização, listagem e exclusão de pessoa física e jurídica, produto, funcionário, usuário, cidade, tipo de pessoa, cidade, estado, endereço, contatos, unidade, venda e compra.
+<div style='text-align: justify'> 
+Na versão de monólito (descontinuada), o sistema ERP que desenvolvi permite a realização de operações básicas, tais como cadastro, atualização, listagem e exclusão de informações relacionadas a pessoa física e jurídica, produtos, funcionários, usuários, cidades, tipos de pessoa, endereços, contatos, unidades, vendas e compras.
 
-Na versão distribuída algumas coisas ainda não foram implementadas como a parte relacionada a funcionário e usuário (esta será delegada ao KeyCloak), porém há algumas funcionalidades presentes somente nesta versão, como o controle de estoque através de compras/vendas e a geração dinâmica de e-mails quando uma compra ou venda são realizadas como pode ser visto nas imagens abaixo.
+</br>
 
-### E-mail Venda
+No módulo de cadastro, é possível registrar detalhes sobre clientes, tanto pessoas físicas como jurídicas, incluindo informações de identificação, dados de contato e endereços. O sistema também permite a gestão de produtos, com a possibilidade de cadastrar novos itens, atualizar suas informações e remover aqueles que não são mais necessários.
 
-![E-mail gerado ao cadastrar uma venda](./assets/images/email_venda.png)
+Além disso, o ERP contempla funcionalidades relacionadas à gestão de funcionários, permitindo o registro de informações sobre colaboradores, como nome, cargo, departamento e dados de contato. O módulo de usuários permite criar e gerenciar contas de acesso ao sistema, controlando as permissões de cada usuário de acordo com suas responsabilidades.
 
-![Boleto anexado no e-mail da venda para pagamento](./assets/images/boleto_gerado.png)
+O módulo de vendas e compras é responsável por gerenciar transações comerciais, permitindo o registro de vendas realizadas aos clientes e compras feitas dos fornecedores.
 
-### E-mail Compra
-
-![E-mail gerado ao cadastrar uma venda](./assets/images/email_compra.png)
-
-### Tela de Estoque
-![Estoque](./assets/images/estoque.png)
-
-Como dito anteriormente o controle do estoque é realizado via compras e vendas, sendo que quando uma saída é cadastrada algumas verificações são realizadas pelo sistema que podem impedir que ela aconteça, sendo elas:
-
-* Ter muitas vendas com status *Aguardando Pagamento* vinculadas a esse cliente.
-* Caso não exista quantidade livre em estoque o suficiente para atender a demanda.
-
-Pode-se notar na imagem acima que para determinado produto há a reserva de duas unidades. Caso seja cadastrada uma saída com 12 unidades ela será automaticamente cancelada pelo sistema.
-
-Algumas curiosidades a respeito do funcionamento do sistema:
-
-* Há cache das informações somente nos dados de Cidade e Estado, já que é esperado que haja um grande fluxo de alterações e cadastros nas demais possibilidades.
-
-* É utilizado o *Client Streaming* do gRPC para o cadastro dos contatos de pessoa física e jurídica.
-
-* Os serviços de E-mail e Estoque são acessíveis somente através do Broker
-
+É importante ressaltar que essa versão do sistema ERP está descontinuada, o que significa que não receberá mais atualizações e melhorias. No entanto, ela fornece uma base sólida para entender os conceitos e as funcionalidades presentes em sistemas ERP mais modernos e atualizados.
+</div>
 
 ## Tecnologias utilizadas
 
@@ -92,16 +53,7 @@ Algumas curiosidades a respeito do funcionamento do sistema:
 - ``Spring Doc``
 - ``Lombok``
 - ``Docker``
-- ``RabbitMq``
-- ``gRPC``
 
 ## Licença
 
 GNU GENERAL PUBLIC LICENSE v3
-
-
-## Conclusão
-
-Através do desenvolvimento deste projeto pode-se compreender um pouco mais sobre o funcionamento da arquitetura distribuída. Ficaram visíveis os novos desafios e a complexidade que este tipo de abordagem implica como por exemplo lidar com erros, o SOF (Single Point of Failure) que neste caso diria que seria o gRPC e o RabbitMq, o que fazer caso o outro serviço esteja fora do ar.
-
-Está sendo muito satisfatório construir esta aplicação e conforme for adquirindo conhecimento irei modificando-a e corrigindo os pontos necessários.
